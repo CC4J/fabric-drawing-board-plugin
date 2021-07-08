@@ -7,6 +7,15 @@ export function initMixin (DrawingBoard) {
 		
 		fdb._fcvs = null // fabric canvas 对象
 		fdb._curAction = null // 当前操作类型
+		fdb._beginMouseDoing = false // 当前是否开启了鼠标操作
+
+		fdb._isEditHistory = false // 当前是否正在改变画布历史
+		fdb._historyIdx = 0 // 当前画布历史节点索引
+		fdb._historyArr = [] // 画布历史集合
+
+		fdb._tmpText = null // 临时绘制的文字
+		fdb._tmpDrawingObj = null // 临时绘制的图形
+		
 		fdb._mouseFrom = {x: 0, y: 0} // 鼠标操作开始点
 		fdb._mouseTo = {x: 0, y: 0} // 鼠标操作结束点
 
@@ -15,7 +24,7 @@ export function initMixin (DrawingBoard) {
 		fdb._brushColor = options.brushColor || STROKE_COLOR // 画笔颜色
 		fdb._strokeColor = options.strokeColor || STROKE_COLOR // 线条颜色
 		fdb._fillColor = options.fillColor || FILL_COLOR // 填充色
-		fdb._bgColor = options._bgColor || FILL_COLOR // 背景色
+		fdb._bgColor = options.bgColor || FILL_COLOR // 背景色
 
 		fdb._brushSize = options.brushSize || STROKE_SIZE // 画笔大小
 		fdb._strokeSize = options.strokeSize || STROKE_SIZE // 线条大小
@@ -43,5 +52,8 @@ export function initMixin (DrawingBoard) {
 		fdb._fcvs.hoverCursor = 'default'
 		// 设置画布背景色
 		fdb.setBgColor(this._bgColor)
+
+		// 记录画布原始状态
+		fdb._historyArr.push(JSON.stringify(fdb._fcvs))
 	}
 }

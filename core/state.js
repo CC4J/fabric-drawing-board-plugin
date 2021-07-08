@@ -1,3 +1,5 @@
+import { ACTION_BRUSH } from '../util/const'
+
 export function stateMixin (DrawingBoard) {
 	
 	DrawingBoard.prototype.getFabric = function () {
@@ -10,6 +12,9 @@ export function stateMixin (DrawingBoard) {
 
 	DrawingBoard.prototype.setBrushColor = function (color) {
 		this._brushColor = color
+		if (this._curAction == ACTION_BRUSH) {
+			this._fcvs.freeDrawingBrush.color = this._brushColor
+		}
 	}
 
 	DrawingBoard.prototype.setStrokeColor = function (color) {
@@ -32,6 +37,9 @@ export function stateMixin (DrawingBoard) {
 
 	DrawingBoard.prototype.setBrushSize = function (size) {
 		this._brushSize = parseInt(size, 10)
+	}
+	DrawingBoard.prototype.setEraserSize = function (size) {
+		this._eraserSize = parseInt(size, 10)
 	}
 
 	DrawingBoard.prototype.setStrokeSize = function (size) {
