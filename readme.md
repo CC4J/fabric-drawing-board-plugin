@@ -27,6 +27,10 @@ import FabricDrawingBoard from "fabric-drawing-board";
 const fdb = new FabricDrawingBoard({ canvasId: "myCanvasId" });
 ```
 
+# Repo
+
+- https://github.com/CC4J/fabric-drawing-board-plugin
+
 # Demo
 
 - https://github.com/CC4J/fabric-drawing-board-plugin-demo
