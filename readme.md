@@ -57,6 +57,7 @@ const fdb = new FabricDrawingBoard({
 	strokeColor: "rgb(0, 0, 0)", // stroke color of line, rect, circle, text
 	fillColor: "rgba(0, 0, 0, 0)", // fill color of rect, circle
 	bgColor: "rgba(0, 0, 0, 0)", // background color of canvas
+	textEditBgColor: '#fff', // text edit area background color
 	brushSize: 4, // free draw width
 	strokeSize: 4, // stroke width of line, rect, circle
 	eraserSize: 4, // eraser width
@@ -114,6 +115,16 @@ fdb.setBgColor("#000");
 fdb.setBgColor("rgb(0,0,0)");
 fdb.setBgColor("rgba(0,0,0,0)");
 fdb.setBgColor("black");
+```
+
+## setTextEditBgColor()
+
+```js
+// set text edit area background color
+fdb.setTextEditBgColor("#000");
+fdb.setTextEditBgColor("rgb(0,0,0)");
+fdb.setTextEditBgColor("rgba(0,0,0,0)");
+fdb.setTextEditBgColor("black");
 ```
 
 ## setBrushSize()

@@ -25,6 +25,10 @@ export function stateMixin (DrawingBoard) {
 		this._fillColor = color
 	}
 
+	DrawingBoard.prototype.setTextEditBgColor = function (color) {
+		this._textEditBgColor = color
+	}
+
 	DrawingBoard.prototype.setBgColor = function (color) {
 		this._bgColor = color
 		if (this._fcvs && this._fcvs.setBackgroundColor) {

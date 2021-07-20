@@ -1,6 +1,6 @@
 {
 	"name": "fabric-drawing-board",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "create drawing board by fabric",
 	"main": "index.js",
 	"scripts": {

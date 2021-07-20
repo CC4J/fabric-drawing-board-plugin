@@ -12,7 +12,7 @@ export function initText (fdb) {
 			hasControls: false,
 			editable: true,
 			width: 30,
-			backgroundColor: "#fff",
+			backgroundColor: fdb._textEditBgColor,
 			selectable: false,
 		});
 

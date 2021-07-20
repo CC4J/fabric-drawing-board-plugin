@@ -25,6 +25,7 @@ export function initMixin (DrawingBoard) {
 		fdb._strokeColor = options.strokeColor || STROKE_COLOR // 线条颜色
 		fdb._fillColor = options.fillColor || FILL_COLOR // 填充色
 		fdb._bgColor = options.bgColor || FILL_COLOR // 背景色
+		fdb._textEditBgColor = options.textEditBgColor || '#fff' // 文字编辑时背景色
 
 		fdb._brushSize = options.brushSize || STROKE_SIZE // 画笔大小
 		fdb._strokeSize = options.strokeSize || STROKE_SIZE // 线条大小
