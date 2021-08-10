@@ -93,6 +93,10 @@ function afterRender (fdb) {
 				fdb._drawingTimer = null
 			}
 			fdb._drawingTimer = setTimeout(() => {
+				// 如果当前索引位置在0，则覆盖掉索引0之后的内容
+				if (fdb._historyIdx == 0) {
+					fdb._historyArr = [fdb._historyArr[0]]
+				}
 				fdb._historyArr.push(JSON.stringify(fdb._fcvs))
 				fdb._historyIdx++
 			}, fdb._curAction != ACTION_TEXT ? 100 : 2000)
