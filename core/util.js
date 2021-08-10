@@ -166,6 +166,14 @@ function changeCanvasHistory (fdb, flag) {
 	if (historyIdx < 0) return;
 	// 判断是否已经到了最后一步操作
 	if (historyIdx >= fdb._historyArr.length) return;
+	// 如果退回到了第0步，则要清空历史数组的其余项，画布从头开始
+	if (historyIdx == 0) {
+		fdb._historyArr = [fdb._historyArr[historyIdx]]
+		fdb._fcvs.loadFromJSON(fdb._historyArr[historyIdx])
+		fdb._historyIdx = historyIdx
+		return;
+	}
+	// 没有退回到第0项
 	if (fdb._historyArr[historyIdx]) {
 		fdb._fcvs.loadFromJSON(fdb._historyArr[historyIdx])
 		if (fdb._fcvs.getObjects().length > 0) {
